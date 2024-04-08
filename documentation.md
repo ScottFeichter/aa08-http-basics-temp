@@ -119,7 +119,7 @@ in the network tab as "payload".
 Request components:
 - Method: POST
 - URL: /products/:productId
-- Headers:
+- Headers: content-type application/x-www-form-urlencoded location 
 - Body: form submitted data
 
 Response components:
@@ -130,45 +130,45 @@ Response components:
 ### Ask for the edit product page
 
 Request components:
-- Method:
-- URL:
-- Headers:
-- Body:
+- Method: GET
+- URL: /products/:productId/edit
+- Headers: content type text/html
+- Body: n/a
 
 Response components:
-- Status code:
-- Headers:
-- Body:
+- Status code: 200 
+- Headers: content type text/html
+- Body: html form for edit 
 
 ### Submit an edit for an existing product
 
 After successful submission, user should be looking at the product detail page.
 
 Request components:
-- Method:
-- URL:
-- Headers:
-- Body:
+- Method:POST
+- URL: /products/:productId
+- Headers: content-type application/x-www-form-urlencoded
+- Body: form data
 
 Response components:
-- Status code:
-- Headers:
-- Body:
+- Status code: 302 redirect
+- Headers: content-type text/html, location /products/:productId
+- Body: updated product page
 
 ### Submit a delete for an existing product
 
 After successful submission, user should be looking at the products list page.
 
 Request components:
-- Method:
-- URL:
-- Headers:
-- Body:
+- Method: POST
+- URL: /products/:productId/delete
+- Headers: content-type text/html
+- Body: n/a
 
 Response components:
-- Status code:
-- Headers:
-- Body:
+- Status code: 302
+- Headers:content-type text/html location /products
+- Body: products html page
 
 ### Submit a new review for a product
 
@@ -184,15 +184,15 @@ Here's an example review on the server:
 | productId  | 1                      |
 
 Request components:
-- Method:
-- URL:
-- Headers:
-- Body:
+- Method: POST
+- URL: /products/:productId/reviews
+- Headers: content-type application/x-www-form-urlencoded
+- Body: form data
 
 Response components:
-- Status code:
-- Headers:
-- Body:
+- Status code: 302
+- Headers: content-type text/ html, location /products/:productId
+- Body: product details html page
 
 ### Ask for the edit review page for a product
 
